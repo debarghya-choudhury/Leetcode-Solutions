@@ -4,7 +4,7 @@ class Solution:
         counter = 0  # to count how many 1s
         
         # or
-        counterUsingMethod = s.count("1")
+        counterUsingMethod = s.count("1")  # leanind .count() method for strings
         
         for i in range(0, len(s)):
             if s[i] == "1":

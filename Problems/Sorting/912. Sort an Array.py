@@ -16,17 +16,38 @@ class Solution:
         # return nums
 
         # merge sort
-        if len(nums) == 1:
-            return nums
-        else:
-            mid = len(nums) // 2
-            x = nums[0:mid]
-            y = nums[mid:len(nums)]
-            x = self.sortArray(x) 
-            y = self.sortArray(y)
-            arr = self.merge(x, y)
-            return arr
+        # if len(nums) == 1:
+        #     return nums
+        # else:
+        #     mid = len(nums) // 2
+        #     x = nums[0:mid]
+        #     y = nums[mid:len(nums)]
+        #     x = self.sortArray(x) 
+        #     y = self.sortArray(y)
+        #     arr = self.merge(x, y)
+        #     return arr
 
+        # quick sort
+        if len(nums) <= 1:
+            return nums
+        pivot = len(nums) - 1
+        p1 = p2 = 0
+
+        for i in range(0, len(nums) - 1):
+            if nums[p2] <= nums[pivot]:
+                hold = nums[p2]
+                nums[p2] = nums[p1]
+                nums[p1] = hold
+                p1 += 1
+            p2 += 1
+        hold = nums[p1]
+        nums[p1] = nums[pivot]
+        nums[pivot] = hold
+        print(nums)
+        nums[:p1] = self.sortArray(nums[0:p1])
+        nums[p1+1:] = self.sortArray(nums[p1+1:pivot+1])
+        return nums
+        
     def merge(self, x: List[int], y: List[int]) -> List[int]:
         i = j = 0
         arr = []

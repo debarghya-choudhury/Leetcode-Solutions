@@ -1,6 +1,6 @@
 class Solution:
     def search(self, nums: List[int], target: int) -> int:
-        l = 0
+        l = 0                                                  #  O(log n)
         r = len(nums) - 1
 
         while l <= r:

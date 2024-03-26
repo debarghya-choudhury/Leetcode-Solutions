@@ -18,15 +18,10 @@ class Solution:
                 if nums[i] == 1:
                     i += 1
                 elif nums[i] > 1 and flag == True:
-                    print("here", nums[i])
                     return 1
-                elif i < len(nums):
-                    if nums[i] - nums[i - 1] > 1:
+                elif nums[i] - nums[i - 1] > 1:
                         return nums[i - 1] + 1
-                    else:
-                        i += 1
                 else:
                     i += 1
                 flag = False
         return nums[-1] + 1
-

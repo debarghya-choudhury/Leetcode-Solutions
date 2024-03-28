@@ -12,7 +12,3 @@ class Solution:
             res += (r - l + 1)
         return res
             
-
-
-
-
